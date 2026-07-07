@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 Project Name: Minesweeper Game
 Version: 1.0
 Date: June 30, 2026
-Author: II Landicho (BurntShuji)
+Author: II Landicho (BurntShujigit config --global user.email "YOUR_ANONYMOUS_EMAIL_HERE@users.noreply.github.com")
 */
 public class App {
     public static void main(String[] args) throws Exception {

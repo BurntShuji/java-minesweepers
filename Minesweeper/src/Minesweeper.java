@@ -81,10 +81,18 @@ public class Minesweeper {
                         if(e.getButton() == MouseEvent.BUTTON1){ //Left click
                             if(tile.getText() == ""){
                                 if(mineList.contains(tile)){
+                                    long startTime = System.currentTimeMillis();
                                     revealMines();
+                                    long endTime = System.currentTimeMillis();
+                                    long duration = (endTime - startTime);
+                                    System.out.println("revealMines took " + duration + " milliseconds!");
                                 }
                                 else{
+                                    long startTime = System.currentTimeMillis();
                                     checkMine(tile.row, tile.col);
+                                    long endTime = System.currentTimeMillis();
+                                    long duration = (endTime - startTime);
+                                    System.out.println("checkMine took " + duration + " milliseconds!");
                                 }
                             }
                         }
@@ -145,6 +153,7 @@ public class Minesweeper {
         ++tilesClicked;
         txtLabel.setText("Minesweeper 12  |  Score: " + (tilesClicked * 150));
         int minesFound = 0;
+        long startTime = System.currentTimeMillis();
         minesFound += countMines(r - 1 , c - 1); //top left
         minesFound += countMines(r - 1, c); //top
         minesFound += countMines(r - 1, c + 1); //top right
@@ -168,12 +177,16 @@ public class Minesweeper {
             checkMine(r + 1, c - 1); //bottom left
             checkMine(r + 1, c); //bottom
             checkMine(r + 1, c + 1); //bottom right
+             long endTime = System.currentTimeMillis();
+            long duration = (endTime - startTime);
+            System.out.println("countMines took " + duration + " milliseconds!");
         }
         if(tilesClicked == (numRow * numCol) - mineList.size()){
             endGame(tilesClicked + 250);
             txtLabel.setText("Mines Cleared!");
         }
     }
+
     int countMines(int r, int c){
         if(r < 0 || r >= numRow || c < 0 || c >= numCol){ //Checkng if within boundaries
             return 0;
@@ -200,7 +213,11 @@ public class Minesweeper {
             JOptionPane.INFORMATION_MESSAGE
         );
         if(playAgain == JOptionPane.YES_OPTION){
+            long startTime = System.currentTimeMillis();
             resetGame();
+            long endTime = System.currentTimeMillis();
+            long duration = (endTime - startTime);
+            System.out.println("resetGame took " + duration + " milliseconds!");
         }
         else{
             System.exit(0);
@@ -222,6 +239,10 @@ public class Minesweeper {
             }
         }
         txtLabel.setText("Minesweeper 12  |  Score: " + tilesClicked);
+        long startTime = System.currentTimeMillis();
         setMines();
+        long endTime = System.currentTimeMillis();
+        long duration = (endTime - startTime);
+        System.out.println("setMines took " + duration + " milliseconds!");
     }
 }

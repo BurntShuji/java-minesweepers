@@ -34,3 +34,33 @@ Candlelight, 0
 Candlelight, 150
 Candlelight, 0
 Candlelight, 2850
+Ali, 300
+Ali, 3150
+Tiktok Clocky, 600
+Tiktoky Timer, 300
+Clocky, 600
+Diggie, 0
+Diggie, 300
+Diggie, 0
+Diggie, 450
+Diggie, 1200
+Diggie, 450
+Diggie, 300
+Diggie, 1200
+Diggie, 300
+Diggie, 3000
+Diggie, 150
+Diggie, 450
+Diggie, 5550
+Diggie, 0
+Diggie, 2700
+Diggie, 2550
+Diggie, 0
+LE, 0
+LE, 0
+LE, 0
+LE, 2100
+Shushi, 3600
+Jenjen, 450
+Jenjen, 2700
+Jenjen, 6300

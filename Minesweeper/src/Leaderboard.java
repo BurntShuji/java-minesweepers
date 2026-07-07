@@ -22,6 +22,7 @@ public class Leaderboard {
     }
     
     public static List<String> getTopScores(){
+        long startTime = System.currentTimeMillis();
         List<String> scores = new ArrayList<>();
         try(BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
@@ -36,6 +37,9 @@ public class Leaderboard {
             int scoreB = Integer.parseInt(b.split(",")[1].trim());
             return scoreB - scoreA;
         });
+        long endTime = System.currentTimeMillis();
+        long duration = (endTime - startTime);
+        System.out.println("getTopScores took " + duration + " milliseconds!");
         return scores.size() > 10 ? scores.subList(0, 10) : scores;
     }
 }
